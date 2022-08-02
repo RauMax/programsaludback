@@ -7,6 +7,18 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>TE PUDISTE LOGUEAR BIEN</h1>
+<nav></nav>
+
+	
+	<%
+	String dni = request.getParameter("dni");
+	String contrasenia = request.getParameter("password");
+
+	out.println("<h2>"+dni+"</h2>");
+	out.println("<a href='./MiPerfil.jsp?dni="+dni+"'>Mi perfil</a>");
+	
+	%>
+	
+
 </body>
 </html>

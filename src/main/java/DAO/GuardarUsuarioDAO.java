@@ -53,5 +53,25 @@ public class GuardarUsuarioDAO {
 		}
 
 	}
+	
+	public Statement accederUsuario(Integer dni) {
+		try {
+			ConexionDB conexionDB = new ConexionDB();
+			Connection connection = conexionDB.establecerConexion();
+			Statement statement = connection.createStatement();
+
+			String sql = new String();
+			sql = "SELECT * FROM `usuario` where dni="+dni+";";
+
+			statement.executeUpdate(sql);
+
+			return statement;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+
+	}
 
 }
