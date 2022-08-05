@@ -16,7 +16,7 @@
 
 	out.println("<h2>"+dni+"</h2>");
 	out.println("<a href='./MiPerfil.jsp?dni="+dni+"'>Mi perfil</a>");
-	
+	out.println("<a href='./Turnos.jsp?dni="+dni+"'>Turnos disponibles</a>");
 	%>
 	
 

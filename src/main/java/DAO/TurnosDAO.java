@@ -36,8 +36,7 @@ public class TurnosDAO {
 						resultSet.getString("hora"),
 						resultSet.getString("hora"),
 						resultSet.getInt("id"));
-				
-
+			
 				
 				TurnoAsignado.add(usu);
 			}
