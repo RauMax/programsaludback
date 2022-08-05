@@ -6,7 +6,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import conexiones.ConexionDB;
-import model.Usuario;
 
 public class SesionDAO { 
 
