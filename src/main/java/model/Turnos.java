@@ -9,8 +9,9 @@ public class Turnos {
 	private String hora;
 	private String comentario;
 	private Integer consultorio;
+	private Integer id_U;
 	
-	public Turnos(String especialidad, String nom_prof, String fecha,String hora, String comentario, Integer consultorio) {
+	public Turnos(String especialidad, String nom_prof, String fecha,String hora, String comentario, Integer consultorio, Integer id_U) {
 		super();
 		this.especialidad = especialidad;
 		this.nom_prof = nom_prof;
@@ -18,7 +19,18 @@ public class Turnos {
 		this.hora = hora;
 		this.comentario = comentario;
 		this.consultorio = consultorio;
+		this.id_U = id_U;
+		
 	}
+	
+	public Integer getId_U() {
+		return id_U;
+	}
+
+	public void setId_U(Integer id_U) {
+		this.id_U = id_U;
+	}
+
 	public Integer getId() {
 		return id;
 	}

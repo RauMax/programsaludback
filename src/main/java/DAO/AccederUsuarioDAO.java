@@ -27,6 +27,7 @@ public class AccederUsuarioDAO {
 			List<Usuario> datosUsuario = new ArrayList<Usuario>();
 			while (resultSet.next()) {
 				Usuario usu = new Usuario(
+						resultSet.getInt("id"),
 						resultSet.getString("nombre"),
 						resultSet.getString("apellido"),
 						resultSet.getInt("dni"),

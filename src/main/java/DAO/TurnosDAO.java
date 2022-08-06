@@ -12,7 +12,7 @@ import model.Turnos;
 
 public class TurnosDAO {
 	
-	public List<model.Turnos> Turnos() {
+	public List<Turnos> ListarTurnos() {
 
 		try {
 			ConexionDB conexionDB = new ConexionDB();
@@ -22,7 +22,7 @@ public class TurnosDAO {
 
 			String sql = new String();
 
-			sql = "SELECT * from turnos;";
+			sql = "SELECT * from turnos where id_U IS NULL;";
 
 			ResultSet resultSet = statement.executeQuery(sql);
 			System.out.println(resultSet);
@@ -35,7 +35,8 @@ public class TurnosDAO {
 						resultSet.getString("fecha"),
 						resultSet.getString("hora"),
 						resultSet.getString("hora"),
-						resultSet.getInt("id"));
+						resultSet.getInt("id"),
+						resultSet.getInt("id_U"));
 			
 				
 				TurnoAsignado.add(usu);
@@ -49,4 +50,26 @@ public class TurnosDAO {
 		}
 
 	}
+	
+	public void ActualizarTurno(Integer id_U, Integer id) {
+		try {
+			ConexionDB conexionDB = new ConexionDB();
+			Connection connection = conexionDB.establecerConexion();
+			Statement statement = connection.createStatement();
+
+			String sql = new String();
+
+			sql = "UPDATE turnos"
+					+ "SET id_U =" + id_U +" WHERE id ="+ id +" ;";
+			
+			statement.executeUpdate(sql);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		}
+
+	}
+	
+	
 }

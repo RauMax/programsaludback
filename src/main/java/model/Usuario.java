@@ -12,6 +12,20 @@ public class Usuario {
 	private Integer edad;
 	private String contrasenia;
 
+	public Usuario(Integer id,String nombre, String apellido, Integer dni, Integer telefono, String mail, String direccion,
+			Integer edad, String contrasenia) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.dni = dni;
+		this.telefono = telefono;
+		this.mail = mail;
+		this.direccion = direccion;
+		this.edad = edad;
+		this.contrasenia = contrasenia;
+	}
+
 	public Usuario(String nombre, String apellido, Integer dni, Integer telefono, String mail, String direccion,
 			Integer edad, String contrasenia) {
 		super();
@@ -23,13 +37,13 @@ public class Usuario {
 		this.direccion = direccion;
 		this.edad = edad;
 		this.contrasenia = contrasenia;
-
 	}
 
-	public Usuario(String nombre, String contrasenia) {
-		super();
-		this.nombre = nombre;
-		this.contrasenia = contrasenia;
+	
+	
+	
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public Integer getId() {

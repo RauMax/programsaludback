@@ -24,12 +24,13 @@
         </tr>
       </thead>
       <tbody>
-
+		
         <%
 	TurnosDAO prueba = new TurnosDAO();
-	List<Turnos> resultado = prueba.Turnos();
+	List<Turnos> resultado = prueba.ListarTurnos();
 
 	for (Turnos turnos: resultado) {
+		
 		out.println("<tr>");
 
 		out.println("<td>");
