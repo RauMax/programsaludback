@@ -11,6 +11,7 @@
 <body>
 
 	<% 
+	Integer id = Integer.parseInt(request.getParameter("id"));
 	Integer id_U = Integer.parseInt(request.getParameter("id_U"));
 	Integer id_T = Integer.parseInt(request.getParameter("id_T"));
 	String usu_ape = request.getParameter("usu_ape");
@@ -21,6 +22,13 @@
 	
 	Asignacion asignar = new Asignacion(id_U, id_T, usu_ape ,usu_nom ,turn_esp ,turn_hora ,turn_consul);
 	TurnosDAO turno = new TurnosDAO();
+	
+	//Actualizar tabla turnos
+	
+	
+
+	
+	//Insertar en tabla asignacion 
 	
 	
 	

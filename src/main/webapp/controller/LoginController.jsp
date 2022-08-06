@@ -1,3 +1,7 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="model.Usuario"%>
+<%@page import="DAO.AccederUsuarioDAO"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@page import="DAO.LoginDAO"%>
@@ -12,13 +16,26 @@
 	Integer dni = Integer.parseInt(request.getParameter("dni"));
 	String contrasenia = request.getParameter("password");
 	
+
+	AccederUsuarioDAO accederUsuarioDAO=new AccederUsuarioDAO();
+	
+	Usuario usuario = new Usuario();
+	
+	List<Usuario> acceso = new ArrayList();
+	
+
+	
+
+	
+	
 	LoginDAO loginDAO = new LoginDAO();
-	Boolean correcto = loginDAO.Login(dni, contrasenia);
+	Integer id = loginDAO.Login(dni, contrasenia);
 	
 	
-	if(correcto.booleanValue()){
+	if(id != null){
+		out.print(id);
 		//response.sendRedirect("<h1> SI </h1> <br>");
-		response.sendRedirect("../view/LoginOK.jsp?dni="+dni);
+		response.sendRedirect("../view/LoginOK.jsp?dni="+dni+"&id="+id);
 		
 		
 		

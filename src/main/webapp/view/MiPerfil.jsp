@@ -13,21 +13,17 @@
 <body>
 		
 		<% 
-		String dni = request.getParameter("dni");
-		Integer dniparse = Integer.parseInt(dni);
-		AccederUsuarioDAO prueba = new AccederUsuarioDAO();
-		List<Usuario> resultado = prueba.accederUsuario(dniparse);
-	
-        	
+		Integer dni = Integer.parseInt(request.getParameter("dni"));
 		
+		 AccederUsuarioDAO prueba = new AccederUsuarioDAO();
+	     List<Usuario> resultado = prueba.accederUsuario(dni);
+
+		Integer id = resultado.get(0).getId();
 		
 		//out.print("<nav class='fondo-claro'>Nombre:"+ resultado.get(0).getNombre()+"</nav>");
 		%>
-		<h1 class="fondo-claro"><%for (int i=0;i<resultado.size();i++)
-		{
-			out.println(resultado.get(i).getNombre());
-			
-		}%></h1>
+		<h1 class="fondo-claro">hola<%out.println(resultado.get(0).getNombre()) ;%></h1>
+		<h1 class="fondo-claro">hola<%out.println(id) ;%></h1>
 
 </body>
 </html>

@@ -24,6 +24,8 @@ public class AccederUsuarioDAO {
 			System.out.println(resultSet);
 			
 			
+			
+			
 			List<Usuario> datosUsuario = new ArrayList<Usuario>();
 			while (resultSet.next()) {
 				Usuario usu = new Usuario(
@@ -40,6 +42,7 @@ public class AccederUsuarioDAO {
 				datosUsuario.add(usu);
 			}
 			
+
 			return datosUsuario;
 
 		} catch (Exception e) {

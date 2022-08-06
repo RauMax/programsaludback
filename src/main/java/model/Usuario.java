@@ -12,6 +12,12 @@ public class Usuario {
 	private Integer edad;
 	private String contrasenia;
 
+	
+	
+	public Usuario() {
+		
+	}
+
 	public Usuario(Integer id,String nombre, String apellido, Integer dni, Integer telefono, String mail, String direccion,
 			Integer edad, String contrasenia) {
 		super();

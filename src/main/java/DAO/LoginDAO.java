@@ -12,31 +12,31 @@ import conexiones.ConexionDB;
 
 public class LoginDAO {
 
-	public Boolean Login(Integer dni, String contrasenia) {
-
+	public Integer Login(Integer dni, String contrasenia) {
+		Integer id = null; 
 		try {
 			ConexionDB conexionDB = new ConexionDB();
 			Connection connection = conexionDB.establecerConexion();
+
 			Statement statement = connection.createStatement();
 			
 
 			String sql = new String();
 
-			sql = "SELECT * from usuario where dni=" + dni + " and " + "password='" + contrasenia + "';";
+			sql = "SELECT id from usuario where dni=" + dni + " and " + "password='" + contrasenia + "';";
 
 			ResultSet resultSet = statement.executeQuery(sql);
+			
 			if (resultSet.next()) {
-				
-				return true;
+				id = resultSet.getInt("id");;
 			}
-
-			return false;
+		
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			return false;
 		}
-
+		
+			return id;
 	}
 	
 }
